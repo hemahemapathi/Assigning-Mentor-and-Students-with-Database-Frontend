@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+#MENTOR AND STUDENT ASSIGNMENT SYSTEM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+ 1. Project Overview :
 
-In the project directory, you can run:
+       - The Mentor and Student Assignment System is designed to manage mentor-student relationships within educational or mentorship programs.
+      
+       - It provides administrators with the ability to assign students to mentors, change assignments, and track a student's mentor history.
 
-### `npm start`
+ 2. Features :
+   
+       - Create a Mentor: Allows the creation of mentor profiles, storing mentor details.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+       - Create a Student: Enables the creation of student profiles, who can be assigned to a mentor later.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+       - Assign Students to a Mentor: Assigns multiple students to a mentor at once.
 
-### `npm test`
+       - Change a Student’s Mentor: Reassigns a mentor to a student while keeping the history of previous assignments.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+       - View Students for a Mentor: Shows all students assigned to a mentor.
 
-### `npm run build`
+       - View Previous Mentors of a Student: Logs previous mentors for a particular student.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 3. Tech Stack :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+       - React.js : For building interactive UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+       - React Router : To navigate between different views.
 
-### `npm run eject`
+       - Axios : For making HTTP requests to backend APIs.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Components :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    a) Create Mentor Form :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+      - Function : Allows admin users to input mentor details and submit the form to /api/mentor/create.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+      - State : Manages form input data like mentor name.
 
-## Learn More
+    b) Create Student Form :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+      - Function : Allows admin users to input student details and submit the form to /api/student/create.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      - State : Manages form input data like student name.
 
-### Code Splitting
+    c) Assign Students to Mentor Page :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+      - Function : Provides a dropdown of students and mentors, allowing admins to assign multiple students to one mentor.
 
-### Analyzing the Bundle Size
+      - Interaction : Submit to /api/assign.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    d) Change Mentor Assignment Page :
 
-### Making a Progressive Web App
+      - Function: Dropdown to select a student and change their mentor.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+      - Interaction: Submit new mentor data to /api/change.
 
-### Advanced Configuration
+    e) View Students for a Mentor :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+      - Function : Displays a list of students for a selected mentor.
 
-### Deployment
+      - Data Fetching : Calls /api/:mentorId/students.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    f) View Previous Mentors for a Student :
 
-### `npm run build` fails to minify
+      - Function : Displays all past mentors assigned to a student.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+      - Data Fetching : Calls /api/:studentId/previous-mentors.
+
+5. Future Enhancements :
+
+      - Authentication and Authorization : Implement roles like admin, mentor, and student to limit access to certain features.
+    
+      - Notification System: Notify users when assignments are changed.
+
+      - Search and Filtering: Allow mentors and students to be searched based on specific criteria like skills.
+
+      - Reports: Create reports on mentor-student relationships to provide insights for admins.
+
