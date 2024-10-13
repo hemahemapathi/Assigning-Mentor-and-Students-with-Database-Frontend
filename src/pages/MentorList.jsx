@@ -24,8 +24,11 @@ function MentorList() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const mentorData = { name, email, expertise };
     try {
-      await axios.post('https://assigning-mentor-and-students-with-y002.onrender.com/api/mentors', { name, email, expertise });
+      console.log('Sending data:', mentorData);
+      const response = await axios.post('https://assigning-mentor-and-students-with-y002.onrender.com/api/mentors', mentorData);
+      console.log('Response:', response.data);
       fetchMentors();
       setName('');
       setEmail('');
@@ -33,7 +36,16 @@ function MentorList() {
       setNotification('Mentor added successfully!');
       setTimeout(() => setNotification(''), 3000);
     } catch (error) {
-      console.error('Error creating mentor:', error);
+      if (error.response) {
+        console.error('Error data:', error.response.data);
+        console.error('Error status:', error.response.status);
+        console.error('Error headers:', error.response.headers);
+      } else if (error.request) {
+        console.error('Error request:', error.request);
+      } else {
+        console.error('Error message:', error.message);
+      }
+      console.error('Error config:', error.config);
       setNotification('Error adding mentor. Please try again.');
       setTimeout(() => setNotification(''), 3000);
     }
