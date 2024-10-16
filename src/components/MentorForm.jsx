@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../App.css';
+import '../styles/MentorForm.css';
 
 function MentorForm() {
   const [name, setName] = useState('');
@@ -23,7 +23,8 @@ function MentorForm() {
   };
 
   return (
-    <div className="mentor-form-container">
+    
+<div className="mentor-form-container">
       <h2 className="mentor-form-title">Create Mentor</h2>
       {notification && <div className="notification">{notification}</div>}
       <form className="mentor-form" onSubmit={handleSubmit}>
@@ -43,6 +44,7 @@ function MentorForm() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+
         <input
           className="mentor-form-input"
           type="text"

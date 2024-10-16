@@ -1,0 +1,95 @@
+.home-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color:rgb(180, 233, 235);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', Arial, sans-serif;
+    animation: fadeIn 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-title {
+    color: black;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.home-content {
+    background-color: #34495e;
+    border: 1px solid #445566;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.home-content:hover {
+    background-color: #3a536b;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-button, .home-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color:#3a536b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 10px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.home-button:hover, .home-link:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.home-button:active, .home-link:active {
+    transform: translateY(0);
+}
+
+.home-description {
+    font-size: 18px;
+    color:#445566;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.home-button, .home-link {
+    margin: 10px 10px;
+    animation: pulse 2s infinite;
+}
+.home-link-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

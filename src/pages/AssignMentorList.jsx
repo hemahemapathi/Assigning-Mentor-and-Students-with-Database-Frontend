@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AssignMentorForm from '../components/AssignMentorForm.jsx';
-import '../App.css';
+import '../styles/AssignMentorList.css';
 
 function AssignMentorList() {
   const [students, setStudents] = useState([]);

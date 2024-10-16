@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../App.css';
+import MentorForm from '../components/MentorForm.jsx';
+import '../styles/MentorList.css';
 
 function MentorList() {
   const [mentors, setMentors] = useState([]);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [expertise, setExpertise] = useState('');
   const [notification, setNotification] = useState('');
 
   useEffect(() => {
@@ -22,17 +20,12 @@ function MentorList() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const mentorData = { name, email, expertise };
+  const handleSubmit = async (mentorData) => {
     try {
       console.log('Sending data:', mentorData);
       const response = await axios.post('https://assigning-mentor-and-students-with-y002.onrender.com/api/mentors', mentorData);
       console.log('Response:', response.data);
       fetchMentors();
-      setName('');
-      setEmail('');
-      setExpertise('');
       setNotification('Mentor added successfully!');
       setTimeout(() => setNotification(''), 3000);
     } catch (error) {
@@ -50,46 +43,19 @@ function MentorList() {
       setTimeout(() => setNotification(''), 3000);
     }
   };
-
   return (
     <div className="mentor-list-container">
-      <h2 className="mentor-list-title">Mentor</h2>
-      {notification && <div className="notification">{notification}</div>}
-      <form className="mentor-form" onSubmit={handleSubmit}>
-        <input
-          className="mentor-input"
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          className="mentor-input"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          className="mentor-input"
-          type="text"
-          placeholder="Expertise"
-          value={expertise}
-          onChange={(e) => setExpertise(e.target.value)}
-          required
-        />
-        <button className="mentor-submit-btn" type="submit">ADD MENTOR</button>
-      </form>
-      <ul className="mentor-list">
-        {mentors.map((mentor) => (
-          <li className="mentor-item" key={mentor._id}>
-            {mentor.name} - {mentor.email} - {mentor.expertise}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <h2 className="Mentor-list-title">Mentor</h2>
+    {notification && <div className="notification">{notification}</div>}
+    <MentorForm onSubmit={handleSubmit} />
+    <ul className="mentor-list">
+      {mentors.map((mentor) => (
+        <li className="mentor-item" key={mentor._id}>
+          {mentor.name} - {mentor.email} - {mentor.experience}
+       </li>
+      ) )}
+  </ul>
+  </div>
   );
 }
 

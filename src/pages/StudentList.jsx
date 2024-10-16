@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StudentForm from '../components/StudentForm.jsx';
-import '../App.css';
+import '../styles/StudentList.css';
 
 function StudentList() {
   const [students, setStudents] = useState([]);

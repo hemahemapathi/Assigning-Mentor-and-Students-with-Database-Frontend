@@ -7,8 +7,15 @@ import Home from './pages/Home';
 import AssignMentorList from './pages/AssignMentorList';
 import MentorList from './pages/MentorList';
 import StudentList from './pages/StudentList';
+import './styles/Home.css'
+import './styles/MentorList.css'
+import './styles/MentorForm.css'
+import './styles/StudentForm.css'
+import './styles/StudentList.css'
+import './styles/Navbar.css'
+import './styles/AssignMentorForm.css'
+import './styles/AssignMentorList.css'
 
-import './App.css';
 
 function App() {
   return (

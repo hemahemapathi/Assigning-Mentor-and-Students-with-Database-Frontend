@@ -1,0 +1,111 @@
+.mentor-form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color:#bdc3c7;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    animation: fadeIn 0.5s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mentor-form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mentor-form-title {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mentor-form-input {
+    width: 93%;
+    padding: 12px;
+    border: 2px solid #34495e;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color:aliceblue;
+    color: #34495e;
+    transition: all 0.3s ease;
+}
+
+.mentor-form-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.mentor-form-submit {
+    width: 100%;
+    padding: 14px;
+    background-color:#34495e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.mentor-form-submit:hover {
+    background-color: #c0392b;
+}
+
+.notification {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    border-radius: 6px;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
